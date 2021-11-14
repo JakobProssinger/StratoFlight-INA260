@@ -10,6 +10,8 @@ def main():
     ina260 = INA260(DEVICE_ADDR)
     ina260.reset_chip()
     print(ina260.read_configuration_register())
+    ina260.activate_average(1)
+    print(ina260.read_configuration_register())
 
 
 if __name__ == '__main__':
